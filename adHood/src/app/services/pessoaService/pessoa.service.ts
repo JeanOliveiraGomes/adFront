@@ -30,7 +30,7 @@ export class PessoaService {
 
   public delete(id: number): Observable<any> {
     return this.api
-      .get(`${this.path}/delete?id=${id}`);
+      .delete(`${this.path}/delete?id=${id}`);
   }
 
 }

@@ -48,100 +48,23 @@
     </div>
     <div class="form-group">
       <label>CPF*</label>
-      <input formControlName="cpf" [(ngModel)]="pessoa.cpf" type="number" class="form-control" id="cpf">
+      <input formControlName="cpf" [(ngModel)]="pessoa.cpf" type="text" class="form-control" id="cpf">
     </div>
     <div class="form-group">
       <label>Data Nascimento*</label>
       <input formControlName="dataNascimento" [(ngModel)]="pessoa.dataNascimento" type="date" name="bdaytime">
     </div>
     <div class="form-group">
-      <label>Telefone*</label>
-      <input formControlName="telefone" [(ngModel)]="pessoa.telefone" type="number" class="form-control" id="nome">
+      <label>Sexo</label>
+      <input formControlName="sexo" [(ngModel)]="pessoa.sexo" type="sexo" class="form-control" id="nome">
     </div>
     <div class="form-group">
-      <label>Bairro*</label>
-      <input formControlName="bairro" [(ngModel)]="endereco.bairro" type="text" class="form-control" id="bairro">
+      <label>Naturalidade</label>
+      <input formControlName="naturalidade" [(ngModel)]="pessoa.naturalidade" type="text" class="form-control" id="nome">
     </div>
     <div class="form-group">
-      <label>CEP*</label>
-      <input formControlName="cep" [(ngModel)]="endereco.cep" type="text" class="form-control" id="cep">
-    </div>
-    <div class="form-group">
-      <label>Complemento</label>
-      <input formControlName="complemento" [(ngModel)]="endereco.complemento" type="text" class="form-control"
-        id="complemento">
-    </div>
-    <div class="form-group">
-      <label>UF*</label>
-      <select formControlName="uf" [(ngModel)]="endereco.uf" class="form-control" id="porte">
-        <option value="AC">AC</option>
-        <option value="AL">AL</option>
-        <option value="AP">AP</option>
-        <option value="AM">AM</option>
-        <option value="BA">BA</option>
-        <option value="CE">CE</option>
-        <option value="DF">DF</option>
-        <option value="ES">ES</option>
-        <option value="GO">GO</option>
-        <option value="MA">MA</option>
-        <option value="MT">MT</option>
-        <option value="MS">MS</option>
-        <option value="MG">MG</option>
-        <option value="PA">PA</option>
-        <option value="PB">PB</option>
-        <option value="PR">PR</option>
-        <option value="PE">PE</option>
-        <option value="PI">PI</option>
-        <option value="RJ">RJ</option>
-        <option value="RN">RN</option>
-        <option value="RS">RS</option>
-        <option value="RO">RO</option>
-        <option value="RR">RR</option>
-        <option value="SC">SC</option>
-        <option value="SP">SP</option>
-        <option value="SE">SE</option>
-        <option value="TO">TO</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label>Motivo Pela Qual Dirige*</label>
-      <select formControlName="motivacao" [(ngModel)]="pessoa.motorista.motivacao" class="form-control" id="porte">
-        <option value="ESTUDOS">ESTUDOS</option>
-        <option value="TRABALHO">TRABALHO</option>
-        <option value="APLICATIVO">APLICATIVO</option>
-        <option value="ALUGUEL">ALUGUEL</option>
-        <option value="VEICULO_EMPRESARIAL">VEICULO EMPRESARIAL</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>CNH Validade*</label>
-      <input formControlName="cnhValidade" [(ngModel)]="cnh.validade" type="date" name="bdaytime">
-    </div>
-
-    <div class="form-group">
-      <label>Placa Veiculo*</label>
-      <input formControlName="placa" [(ngModel)]="veiculo.placa" type="text" class="form-control" id="placa">
-    </div>
-    <div class="form-group">
-      <label>Ano Fabricação do Veiculo*</label>
-      <input formControlName="anoFabricacao" [(ngModel)]="veiculo.anoFabricacao" type="number" class="form-control"
-        id="anoFabricacao">
-    </div>
-    <div class="form-group">
-      <label>Cor Veiculo*</label>
-      <input formControlName="cor" [(ngModel)]="veiculo.cor" type="text" class="form-control" id="cor">
-    </div>
-    <div class="form-group">
-      <label>Condicao da Pintura Veiculo*</label>
-      <select formControlName="condicaoPintura" [(ngModel)]="veiculo.condicaoPintura" class="form-control" id="porte">
-        <option value="ORIGINAL">ORIGINAL</option>
-        <option value="REFEITA">REFEITA</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label>Marca Veiculo*</label>
-      <input formControlName="marca" [(ngModel)]="veiculo.marca" type="text" class="form-control" id="marca">
+      <label>Nacionalidade</label>
+      <input formControlName="nacionalidade" [(ngModel)]="pessoa.nascionalidade" type="text" class="form-control" id="nome">
     </div>
     <div class="form-group">
       <label>Password*</label>

@@ -6,15 +6,14 @@ import { MotoristaEntity } from './motoristaEntity';
 import { CampDriverEntity } from './campDriverEntity';
 
 export class PessoaEntity extends GenericEntity {
+    id: number;
     nome: string;
     email: string;
     cpf: string;
     dataNascimento: Date;
-    telefone: string;
-    endereco: EnderecoEntity[];
-    veiculo: VeiculoEntity[];
-    motorista: MotoristaEntity;
-    campDriver: CampDriverEntity[];
+    sexo: string;
+    naturalidade: string;
+    nacionalidade: string;
     perfil: PerfilEntity[];
     isAccountNonExpired: boolean;
     isAccountNonLocked: boolean;
@@ -27,12 +26,10 @@ export class PessoaEntity extends GenericEntity {
         this.nome = '';
         this.email = '';
         this.cpf = '';
-        this.telefone = '';
-        this.veiculo = [];
+        this.naturalidade = '';
+        this.sexo = '';
         this.perfil = [];
-        this.endereco = [];
-        this.motorista = new MotoristaEntity();
-        this.campDriver = [];
+        this.nacionalidade = '';
         this.password = '';
     }
 }

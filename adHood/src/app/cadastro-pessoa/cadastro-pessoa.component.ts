@@ -40,26 +40,28 @@ public buildForm() {
     email: [this.pessoa.email, [Validators.required]],
     cpf: [this.pessoa.cpf, [Validators.required]],
     dataNascimento: [this.pessoa.dataNascimento, [Validators.required]],
-    telefone: [this.pessoa.telefone, [Validators.required]],
+    sexo: [this.pessoa.sexo],
+    naturalidade: [this.pessoa.naturalidade],
+    nacionalidade: [this.pessoa.nacionalidade],
     perfil: [this.perfil.perfil, [Validators.required]],
     password: [this.pessoa.password],
 
     //endereco
-    bairro: [this.endereco.bairro, [Validators.required]],
-    cep: [this.endereco.cep, [Validators.required]],
-    complemento: [this.endereco.complemento],
-    uf: [this.endereco.uf, [Validators.required]],
+    //bairro: [this.endereco.bairro, [Validators.required]],
+    //cep: [this.endereco.cep, [Validators.required]],
+    //complemento: [this.endereco.complemento],
+    //uf: [this.endereco.uf, [Validators.required]],
 
     //motorista
-    motivacao: [this.pessoa.motorista.motivacao],
-    cnhValidade: [this.cnh.validade, [Validators.required]],
+    //motivacao: [this.pessoa.motorista.motivacao],
+    //cnhValidade: [this.cnh.validade, [Validators.required]],
 
     //veiculo
-    placa: [this.veiculo.placa, [Validators.required]],
-    anoFabricacao: [this.veiculo.anoFabricacao, [Validators.required]],
-    cor: [this.veiculo.cor, [Validators.required]],
-    condicaoPintura: [this.veiculo.condicaoPintura, [Validators.required]],
-    marca: [this.veiculo.marca, [Validators.required]],
+    //placa: [this.veiculo.placa, [Validators.required]],
+    //anoFabricacao: [this.veiculo.anoFabricacao, [Validators.required]],
+    //cor: [this.veiculo.cor, [Validators.required]],
+    //condicaoPintura: [this.veiculo.condicaoPintura, [Validators.required]],
+    //marca: [this.veiculo.marca, [Validators.required]],
 
   });
 }
@@ -71,16 +73,7 @@ public buildForm() {
   }
 
   private onSubmit() {
-    if (!this.endereco.id && this.pessoa.endereco.length < 1) {
-      this.pessoa.endereco.push(this.endereco);
-    }
-    if (!this.veiculo.id && this.pessoa.veiculo.length < 1) {
-      this.pessoa.veiculo.push(this.veiculo);
-    }
-    this.pessoa.motorista.cnh = this.cnh;
     this.pessoa.perfil[0] = this.perfil;
-
-    console.log(this.pessoa);
     this.pessoaService.save(this.pessoa).subscribe(data => {
       alert('Salvo com sucesso!');
       this.popularPessoas();
@@ -100,12 +93,6 @@ public buildForm() {
 
   private editar(pessoa) {
     this.pessoa = pessoa;
-    if (!this.pessoa.motorista ||  !this.pessoa.motorista.id) {
-      this.pessoa.motorista = new MotoristaEntity();
-    }
-    this.endereco = pessoa.endereco && pessoa.endereco.length > 0 ? pessoa.endereco[pessoa.endereco.length - 1] : new EnderecoEntity() ;
-    this.cnh = pessoa.motorista && pessoa.motorista.cnh ? pessoa.motorista.cnh : new CnhEntity();
-    this.veiculo = pessoa.veiculo && pessoa.veiculo.length ? pessoa.veiculo[pessoa.veiculo.length - 1] : new VeiculoEntity();
     this.perfil = pessoa.perfil ? pessoa.perfil[0] : new PerfilEntity();
   }
 

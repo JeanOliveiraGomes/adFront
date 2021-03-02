@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     this.apiService.post('api/auth', this.credentials).subscribe((data: any) => {
     sessionStorage.setItem('token', data.token);
     sessionStorage.setItem('userDetails', JSON.stringify(data.userDetails));
-    this.router.navigate(['home']);
+    this.router.navigate(['pessoa']);
  }, error => {
     console.log(error);
     alert(error.error.message);
